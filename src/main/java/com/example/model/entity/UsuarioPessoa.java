@@ -25,120 +25,11 @@ public class UsuarioPessoa {
 	private String nome;
 	private String sobrenome;
 	private String email;
-	private String login;
-	private String senha;
-	private String sexo;
-	private int idade;
-	private Double salario;
+
 
 	@OneToMany(mappedBy = "usuarioPessoa", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, orphanRemoval = true)
 	private List<TelefoneUser> telefoneUsers;
 
-	private String cep;
-
-	private String logradouro;
-
-	private String complemento;
-
-	private String bairro;
-
-	private String localidade;
-
-	private String uf;
-
-	private String unidade;
-
-	private String ibge;
-
-	private String gia;
-
-	public String getCep() {
-		return cep;
-	}
-
-	public void setCep(String cep) {
-		this.cep = cep;
-	}
-
-	public String getLogradouro() {
-		return logradouro;
-	}
-
-	public void setLogradouro(String logradouro) {
-		this.logradouro = logradouro;
-	}
-
-	public String getComplemento() {
-		return complemento;
-	}
-
-	public void setComplemento(String complemento) {
-		this.complemento = complemento;
-	}
-
-	public String getBairro() {
-		return bairro;
-	}
-
-	public void setBairro(String bairro) {
-		this.bairro = bairro;
-	}
-
-	public String getLocalidade() {
-		return localidade;
-	}
-
-	public void setLocalidade(String localidade) {
-		this.localidade = localidade;
-	}
-
-	public String getUf() {
-		return uf;
-	}
-
-	public void setUf(String uf) {
-		this.uf = uf;
-	}
-
-	public String getUnidade() {
-		return unidade;
-	}
-
-	public void setUnidade(String unidade) {
-		this.unidade = unidade;
-	}
-
-	public String getIbge() {
-		return ibge;
-	}
-
-	public void setIbge(String ibge) {
-		this.ibge = ibge;
-	}
-
-	public String getGia() {
-		return gia;
-	}
-
-	public void setGia(String gia) {
-		this.gia = gia;
-	}
-
-	public void setSalario(Double salario) {
-		this.salario = salario;
-	}
-
-	public Double getSalario() {
-		return salario;
-	}
-
-	public void setSexo(String sexo) {
-		this.sexo = sexo;
-	}
-
-	public String getSexo() {
-		return sexo;
-	}
 
 	public void setTelefoneUsers(List<TelefoneUser> telefoneUsers) {
 		this.telefoneUsers = telefoneUsers;
@@ -146,14 +37,6 @@ public class UsuarioPessoa {
 
 	public List<TelefoneUser> getTelefoneUsers() {
 		return telefoneUsers;
-	}
-
-	public void setIdade(int idade) {
-		this.idade = idade;
-	}
-
-	public int getIdade() {
-		return idade;
 	}
 
 	public Long getId() {
@@ -188,26 +71,9 @@ public class UsuarioPessoa {
 		this.email = email;
 	}
 
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-
 	@Override
 	public String toString() {
-		return "UsuarioPessoa [id=" + id + ", nome=" + nome + ", sobrenome=" + sobrenome + ", email=" + email
-				+ ", login=" + login + ", senha=" + senha + ", idade=" + idade + "]";
+		return "UsuarioPessoa [id=" + id + ", nome=" + nome + ", sobrenome=" + sobrenome + ", email=" + email + "]";
 	}
 
 	@Override

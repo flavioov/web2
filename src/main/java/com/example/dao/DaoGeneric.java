@@ -2,12 +2,10 @@ package com.example.dao;
 
 import java.util.List;
 
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
 import com.example.util.HibernateUtil;
-import org.hibernate.service.spi.InjectService;
 
 @SuppressWarnings("unchecked")
 public class DaoGeneric<E> {
@@ -46,7 +44,7 @@ public class DaoGeneric<E> {
 
 	}
    
-	public void deletarPoId(E entidade) throws Exception{
+	public void deletarPorId(E entidade) throws Exception{
 		Object id = HibernateUtil.getPrimaryKey(entidade); // Obtem o ID do objeto PK
 		EntityTransaction transaction = entityManager.getTransaction();// Obejeto de transação
 		transaction.begin();// Começa uma Transação no banco de dados

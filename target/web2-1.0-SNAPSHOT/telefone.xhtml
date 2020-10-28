@@ -10,13 +10,6 @@
 
 <h:body>
 
-	<h:form>
-		<p:breadCrumb>
-			<p:menuitem />
-			<p:menuitem value="Página JSF" action="index.xhtml" />
-			<p:menuitem value="Página PrimeFaces" action="primefaces.xhtml" />
-		</p:breadCrumb>
-	</h:form>
 
 	<h:form id="formulario">
 		<h:messages showDetail="true" showSummary="false" id="msg" />
@@ -36,7 +29,8 @@
 		<br />
 		<br />
 
-		<h:commandButton value="Salvar" action="#{telefoneManagedBean.salvar}"></h:commandButton>
+		<h:commandButton value="Salvar" action="#{telefoneManagedBean.salvar}"/>
+		<h:commandButton value="voltar" action="index.xhtml"/>
 
 	</h:form>
 
@@ -44,7 +38,9 @@
 		<h:dataTable value="#{telefoneManagedBean.user.telefoneUsers}"
 			var="fone" cellpadding="15" border="1" id="tabelFone">
 
-			<f:facet name="header">Lista de telefones</f:facet>
+			<f:facet name="header">Lista de telefones de:
+				<h:outputText value="#{telefoneManagedBean.user.nome}" />
+			</f:facet>
 
 			<h:column style="width:150px;">
 				<f:facet name="header">Id</f:facet>
@@ -60,14 +56,11 @@
 				<f:facet name="header">Tipo</f:facet>
 				<h:outputText value="#{fone.tipo}" />
 			</h:column>
-			
-			
-			
+
 				<h:column>
 				<f:facet name="header">Delete</f:facet>
-				<h:commandLink immediate="true"
+				<h:commandLink value="delete" immediate="true"
 					action="#{telefoneManagedBean.removeTelefone}" id="botaoremover">
-					<h:graphicImage url="resources/img/delete_97403.jpg" width="25" height="25"/>
 					<f:setPropertyActionListener value="#{fone}"
 						target="#{telefoneManagedBean.telefone}" />
 						<f:ajax execute="botaoremover" render="@form :formulario:msg" />	

@@ -5,7 +5,6 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
-import javax.inject.Inject;
 
 import com.example.dao.DaoTelefones;
 import com.example.dao.DaoUsuario;
@@ -17,8 +16,6 @@ import com.example.model.entity.UsuarioPessoa;
 public class TelefoneManagedBean {
 
 	private UsuarioPessoa user = new UsuarioPessoa();
-
-	@Inject
 	private DaoUsuario<UsuarioPessoa> daoUser = new DaoUsuario<UsuarioPessoa>();
 	private DaoTelefones<TelefoneUser> daoTelefone = new DaoTelefones<TelefoneUser>();
 
@@ -46,7 +43,7 @@ public class TelefoneManagedBean {
 	
 	public String removeTelefone() throws Exception{
 		
-		daoTelefone.deletarPoId(telefone);
+		daoTelefone.deletarPorId(telefone);
 		user = daoUser.pesquisar(user.getId(), UsuarioPessoa.class);
 		telefone = new TelefoneUser();
 		FacesContext.getCurrentInstance().addMessage(null,

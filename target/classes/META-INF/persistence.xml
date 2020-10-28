@@ -8,9 +8,9 @@
         <class>com.example.model.entity.UsuarioPessoa</class>
         <class>com.example.model.entity.TelefoneUser</class>
     <properties>
-        <!--            <property name="hibernate.hbm2dll.auto" value="update"/>-->
+<!--                    <property name="hibernate.hbm2dll.auto" value="update"/>-->
         <property name="javax.persistence.schema-generation.database.action"
-                  value="drop-and-create"/>
+                  value="update"/>
 
 <!--                        <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost/dbjava"/>-->
 <!--                        <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>-->
