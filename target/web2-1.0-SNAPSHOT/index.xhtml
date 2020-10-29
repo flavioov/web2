@@ -1,117 +1,113 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-      xmlns:p="http://primefaces.org/ui">
+>
 
 <h:head>
 </h:head>
 
-<h:form id="formulario">
-    <h:messages showDetail="true" showSummary="false" id="msg" />
-    <h:panelGrid columns="2">
+<h:body>
 
-        <h:outputLabel>Id:</h:outputLabel>
-        <h:inputText readonly="true"
-                     value="#{usuarioPessoaManagedBean.usuarioPessoa.id}" />
+    <h:form id="formulario">
+        <p:messages autoUpdate="true" showDetail="true"/>
+        <br/>
+        <br/>
+        <p:panelGrid columns="2">
 
-        <h:outputLabel>Nome:</h:outputLabel>
-        <h:inputText value="#{usuarioPessoaManagedBean.usuarioPessoa.nome}"
-                     pt:placeholder="nome"
-                     required="true"
-                     requiredMessage="Informe o nome" />
+            <p:outputLabel>ID:</p:outputLabel>
+            <p:inputText readonly="true"
+                         value="#{usuarioPessoaManagedBean.usuarioPessoa.id}"/>
 
-        <h:outputLabel>Sobrenome:</h:outputLabel>
-        <h:inputText value="#{usuarioPessoaManagedBean.usuarioPessoa.sobrenome}"
-                     required="true" requiredMessage="Informe o sobrenome!"
-                     pt:placeholder="sobrenome"/>
+            <p:outputLabel>Nome:</p:outputLabel>
+            <p:inputText value="#{usuarioPessoaManagedBean.usuarioPessoa.nome}"
+                         pt:placeholder="nome"
+                         required="true"
+                         requiredMessage="Informe o nome"/>
 
-        <h:outputLabel>Email:</h:outputLabel>
-        <h:inputText value="#{usuarioPessoaManagedBean.usuarioPessoa.email}"
-                     pt:placeholder="email"/>
-
-    </h:panelGrid>
-    <br />
-    <br />
-    <h:commandButton value="Salvar"
-                     action="#{usuarioPessoaManagedBean.salvar}" />
-    <h:commandButton value="Novo"
-                     action="#{usuarioPessoaManagedBean.novo}" />
-
-    <br />
-    <br />
-</h:form>
-<!--
-HH
-HH
-HH
-HH
--->
-<h:form id="formTable">
-    <h:dataTable value="#{usuarioPessoaManagedBean.list}" var="user"
-                 cellpadding="15" border="1">
-        <f:facet name="header">Lista de usuários</f:facet>
-        <h:column style="width:150px;">
-            <f:facet name="header">Id</f:facet>
-            <h:outputText value="#{user.id}" />
-        </h:column>
-
-        <h:column>
-            <f:facet name="header">Nome</f:facet>
-            <h:outputText value="#{user.nome}" />
-        </h:column>
-
-        <h:column>
-            <f:facet name="header">Sobrenome</f:facet>
-            <h:outputText value="#{user.sobrenome}" />
-        </h:column>
-
-        <h:column>
-            <f:facet name="header">Email</f:facet>
-            <h:outputText value="#{user.email}" />
-        </h:column>
-
-        <h:column>
-            <f:facet name="header">Editar</f:facet>
-            <h:commandLink value="editar" immediate="true" id="botaoeditar">
-                <f:setPropertyActionListener value="#{user}"
-                                             target="#{usuarioPessoaManagedBean.usuarioPessoa}" />
-                <f:ajax execute="botaoeditar" render=":formulario" />
-            </h:commandLink>
-        </h:column>
+            <p:outputLabel>Sobrenome:</p:outputLabel>
+            <p:inputText value="#{usuarioPessoaManagedBean.usuarioPessoa.sobrenome}"
+                         required="true" requiredMessage="Informe o sobrenome!"
+                         pt:placeholder="sobrenome"/>
 
 
-        <h:column>
-            <f:facet name="header">Delete</f:facet>
-            <h:commandLink value="delete" immediate="true"
-                           action="#{usuarioPessoaManagedBean.remover}" id="botaoremover">
-                <f:setPropertyActionListener value="#{user}"
-                                             target="#{usuarioPessoaManagedBean.usuarioPessoa}" />
-                <f:ajax execute="botaoremover" render="@form :formulario:msg" />
-            </h:commandLink>
-        </h:column>
+            <p:outputLabel>Email:</p:outputLabel>
+            <p:inputText value="#{usuarioPessoaManagedBean.usuarioPessoa.email}"
+                         pt:placeholder="email">
+            </p:inputText>
 
 
-        <h:column>
-            <f:facet name="header">Telefones</f:facet>
-            <h:commandLink value="telefones" immediate="true" action="telefone.xhtml" id="botaofone">
-                <f:param name="codigouser" value="#{user.id}" />
-            </h:commandLink>
-        </h:column>
+        </p:panelGrid>
 
+        <br/>
+        <br/>
 
-    </h:dataTable>
-</h:form>
+        <p:commandButton value="Salvar"
+                         action="#{usuarioPessoaManagedBean.salvar}" />
 
+        <p:commandButton value="Novo"
+                         immediate="true"
+                         action="#{usuarioPessoaManagedBean.novo}" >
+            <f:ajax execute="@this" render="@form"/>
+        </p:commandButton>
 
+        <br/>
+        <br/>
 
+    </h:form>
+    <h:form id="formtable">
+        <p:dataTable id="mydata" value="#{usuarioPessoaManagedBean.list}" var="user"
+                     cellpadding="15" border="1">
+            <p:column id="userId" headerText="ID">
+                <h:outputText value="#{user.id}"/>
+            </p:column>
 
+            <p:column id="userNome" headerText="Nome">
+                <h:outputText value="#{user.nome}"/>
+            </p:column>
 
+            <p:column headerText="Sobrenome">
+                <h:outputText value="#{user.sobrenome}"/>
+            </p:column>
 
+            <p:column headerText="Email">
+                <h:outputText value="#{user.email}"/>
+            </p:column>
 
+            <p:column headerText="Editar" exportable="false">
+                <h:commandLink value="editar" immediate="true" id="botaoditar">
+                    <f:setPropertyActionListener value="#{user}"
+                                                 target="#{usuarioPessoaManagedBean.usuarioPessoa}"/>
+                    <f:ajax execute="botaoditar" render=":formulario"/>
+                </h:commandLink>
+            </p:column>
+
+            <p:column headerText="Remover" exportable="false">
+                <h:commandLink value="delete" id="botaoremover"
+                               action="#{usuarioPessoaManagedBean.remover}">
+                    <f:setPropertyActionListener value="#{user}"
+                                                 target="#{usuarioPessoaManagedBean.usuarioPessoa}"/>
+                    <f:ajax execute="botaoremover" render="@form"/>
+                </h:commandLink>
+            </p:column>
+
+            <p:column headerText="Telefones" exportable="false">
+                <h:commandLink value="telefones" immediate="true" action="telefone.xhtml" id="botaofone">
+                    <f:param name="codigouser" value="#{user.id}"/>
+                </h:commandLink>
+            </p:column>
+
+        </p:dataTable>
+
+        <br/>
+
+        <p:commandButton value="Export as CSV" ajax="false">
+            <p:dataExporter type="csv" target="mydata" fileName="Usuarios"/>
+        </p:commandButton>
+    </h:form>
+
+</h:body>
 
 </html>
