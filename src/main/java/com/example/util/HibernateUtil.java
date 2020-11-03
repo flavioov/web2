@@ -28,7 +28,7 @@ public class HibernateUtil {
 
 	public static EntityManager geEntityManager() {
 		return factory
-				.createEntityManager(); /* Prove a parte de persistencia */
+				.createEntityManager(); /* Promove a parte de persistencia */
 	}
 
 	public static Object getPrimaryKey(Object entity) { // Retorna a primay key
