@@ -8,17 +8,17 @@
         <class>com.example.model.entity.UsuarioPessoa</class>
         <class>com.example.model.entity.TelefoneUser</class>
     <properties>
-        <property name="hibernate.hbm2dll.auto" value="update"/>
+<!--        <property name="hibernate.hbm2dll.auto" value="create"/>-->
 
-<!--        <property name="javax.persistence.schema-generation.database.action"  value="update"/>-->
+        <property name="javax.persistence.schema-generation.database.action"  value="drop-and-create"/>
 
-<!--                        <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost/dbjava"/>-->
-<!--                        <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>-->
-<!--                        <property name="javax.persistence.jdbc.user" value="admin"/>-->
-<!--                        <property name="javax.persistence.jdbc.password" value="admin"/>-->
+                        <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost/dbjava"/>
+                        <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+                        <property name="javax.persistence.jdbc.user" value="admin"/>
+                        <property name="javax.persistence.jdbc.password" value="admin"/>
 <!--                        <property name="hibernate.hbm2dll.auto" value="update"/>-->
-<!--                        &lt;!&ndash; https://docs.jboss.org/hibernate/orm/5.4/javadocs/org/hibernate/dialect/package-summary.html &ndash;&gt;-->
-<!--                        <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL9Dialect"/>-->
+                        <!-- https://docs.jboss.org/hibernate/orm/5.4/javadocs/org/hibernate/dialect/package-summary.html -->
+                        <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL9Dialect"/>
 
     </properties>
     </persistence-unit>

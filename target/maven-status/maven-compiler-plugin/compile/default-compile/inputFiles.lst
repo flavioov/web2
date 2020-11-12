@@ -1,1 +1,8 @@
-/home/flavio/IdeaProjects/web2/src/main/java/com/example/PessoaBean.java
+/home/flavio/IdeaProjects/coppe/web2/src/main/java/com/example/dao/DaoUsuario.java
+/home/flavio/IdeaProjects/coppe/web2/src/main/java/com/example/model/entity/UsuarioPessoa.java
+/home/flavio/IdeaProjects/coppe/web2/src/main/java/com/example/dao/DaoTelefones.java
+/home/flavio/IdeaProjects/coppe/web2/src/main/java/com/example/managedBean/UsuarioPessoaManagedBean.java
+/home/flavio/IdeaProjects/coppe/web2/src/main/java/com/example/model/entity/TelefoneUser.java
+/home/flavio/IdeaProjects/coppe/web2/src/main/java/com/example/dao/DaoGeneric.java
+/home/flavio/IdeaProjects/coppe/web2/src/main/java/com/example/util/HibernateUtil.java
+/home/flavio/IdeaProjects/coppe/web2/src/main/java/com/example/managedBean/TelefoneManagedBean.java

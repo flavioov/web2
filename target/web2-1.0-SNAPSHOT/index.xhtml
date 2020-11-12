@@ -45,7 +45,7 @@
         <br/>
 
         <p:commandButton value="Salvar"
-                         action="#{usuarioPessoaManagedBean.salvar}" />
+                         action="#{usuarioPessoaManagedBean.salvar}"  ajax="false"/>
 
         <p:commandButton value="Novo"
                          immediate="true"
@@ -104,11 +104,11 @@
         <br/>
 
         <p:commandButton value="Export as CSV" ajax="false">
-            <p:dataExporter type="csv" target="mydata" fileName="Usuarios"/>
+            <p:dataExporter type="csv" target="mydata" fileName="UsuariosCSV"/>
         </p:commandButton>
 
         <p:commandButton value="Export as XML" ajax="false">
-            <p:dataExporter type="xml" target="mydata" fileName="Usuarios"/>
+            <p:dataExporter type="xml" target="mydata" fileName="UsuariosXML"/>
         </p:commandButton>
     </h:form>
 

@@ -1,0 +1,9 @@
+batch
+
+module add --name=org.postgresql --resources=/opt/jboss/wildfly/standalone/deployments/postgresql-42.2.18.jar --dependencies=javax.api,javax.transaction.api
+
+/subsystem=datasources/jdbc-driver=postgres:add(driver-name="postgres",driver-module-name="org.postgresql",driver-class-name=org.postgresql.Driver)
+
+data-source add --jndi-name=java:/dbjavaDS --name=dbjavaDS --connection-url=jdbc:postgresql://172.20.0.2:5432/dbjava --driver-name=postgres --user-name=admin --password=admin
+
+run-bach

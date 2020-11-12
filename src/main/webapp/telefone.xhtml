@@ -72,7 +72,11 @@
 		</p:dataTable>
 
 		<p:commandButton value="Export as CSV" ajax="false">
-			<p:dataExporter type="csv" target="tabelFone" fileName="Telefones"/>
+			<p:dataExporter type="csv" target="tabelFone" fileName="Telefones_#{telefoneManagedBean.user.nome}"/>
+		</p:commandButton>
+
+		<p:commandButton value="Export as XML" ajax="false">
+			<p:dataExporter type="xml" target="tabelFone" fileName="Telefones_#{telefoneManagedBean.user.nome}"/>
 		</p:commandButton>
 	</h:form>
 

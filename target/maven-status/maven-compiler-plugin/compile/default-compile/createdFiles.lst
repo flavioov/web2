@@ -1,1 +1,8 @@
-com/example/PessoaBean.class
+com/example/model/entity/TelefoneUser.class
+com/example/managedBean/UsuarioPessoaManagedBean.class
+com/example/dao/DaoGeneric.class
+com/example/dao/DaoUsuario.class
+com/example/model/entity/UsuarioPessoa.class
+com/example/dao/DaoTelefones.class
+com/example/util/HibernateUtil.class
+com/example/managedBean/TelefoneManagedBean.class
