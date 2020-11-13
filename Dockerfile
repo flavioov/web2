@@ -17,11 +17,7 @@ ENV DB_PORT 5432
 ENV DS_NAME dbjavaDS
 ENV JNDI_NAME java:/dbjavaDS
 
-#ADD ./postgresql-42.2.18.jar /tmp/postgresql-42.2.18.jar
 ADD ./postgresql-42.2.18.jar /opt/jboss/wildfly/standalone/deployments/
-
-ADD ./scripts/wildfly-config.cli /tmp/wildfly-config.cli
-
 
 # configurandio e adicionado o datasource no wildfly
 RUN /bin/sh -c '$JBOSS_HOME/bin/standalone.sh -c=standalone.xml &' && \
